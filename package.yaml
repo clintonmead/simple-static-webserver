@@ -1,0 +1,47 @@
+name:                simple-static-webserver
+version:             0.1.0.0
+github:              "clintonmead/simple-static-webserver"
+license:             BSD3
+author:              "Clinton Mead"
+maintainer:          "clintonmead@gmail.com"
+copyright:           "Copyright: (c) 2018 Clinton Mead"
+
+synopsis:            A very simple webserver
+category:            Web
+
+description:
+  A very simple webserver that only serves one directory.
+
+
+  But it does handle not only GET requests but also PUT, POST, and DELETE
+  by creating (or overwriting) files/deleting them.
+
+
+  Note it doesn't have any security so don't use this for anything remotely important.
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+    - warp
+    - wai
+    - http-types
+    - bytestring
+    - filepath
+    - directory
+    - text
+    - atomic-file-ops
+
+executables:
+  simple-static-webserver:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - simple-static-webserver
+    - optparse-applicative
