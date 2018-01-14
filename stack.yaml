@@ -1,6 +1,6 @@
-resolver: lts-10.2
+resolver: lts-10.3
 packages:
 - .
 extra-deps:
-- io-string-like-0.1.0.0
-- atomic-file-ops-0.1.0.0
+- io-string-like-0.1.0.1
+- atomic-file-ops-0.1.0.1
